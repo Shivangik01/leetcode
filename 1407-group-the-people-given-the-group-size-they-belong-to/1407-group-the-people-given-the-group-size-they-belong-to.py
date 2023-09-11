@@ -9,10 +9,10 @@ class Solution:
         res = []
         hp = defaultdict(list)
 
-        for i in range(len(groupSizes)):
-            hp[groupSizes[i]].append(i)
-            if len(hp[groupSizes[i]])==groupSizes[i]:
-                res.append(hp.pop(groupSizes[i]))
+        for i,size in enumerate(groupSizes):
+            hp[size].append(i)
+            if len(hp[size])==size:
+                res.append(hp.pop(size))
 
         # print(hp)
 
