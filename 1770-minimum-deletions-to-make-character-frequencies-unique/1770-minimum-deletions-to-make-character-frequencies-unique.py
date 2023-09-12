@@ -8,7 +8,7 @@ class Solution:
             hp[a]+=1
 
         dels = 0
-        freq = sorted(hp.values(), reverse=True)
+        freq = sorted(hp.values())
         seen = []
 
         for val in freq:
