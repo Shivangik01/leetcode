@@ -8,11 +8,9 @@ class Solution:
             hp[a]+=1
 
         dels = 0
-        #freq = sorted(hp.values())
-        freq = hp.values()
-        seen = []
+        seen = set()
 
-        for val in freq:
+        for val in hp.values():
             
             if val in seen:   
                 
@@ -20,7 +18,7 @@ class Solution:
                     val -= 1
                     dels += 1
             
-            seen.append(val)
+            seen.add(val)
 
         #print(seen,dels)
         return dels
