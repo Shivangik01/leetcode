@@ -3,8 +3,7 @@ class Solution:
 
         n = len(nums)
 
-        if n==1:
-            return nums[0]
+        #
         
         op = [0 for _ in range(n)]
         ssop = [i for i in nums]
