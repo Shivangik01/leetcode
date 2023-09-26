@@ -6,15 +6,8 @@ class Solution:
 
         for num in nums[1:]:
 
-            if skip<0:
-                skip=0
-
-            skip = skip+num if num>=0 else max(skip+num,noskip)
-
-            if noskip<0:
-                noskip=0
-            
-            noskip+=num
+            skip = max(skip+num,noskip)
+            noskip = max(noskip+num,num)
 
             ans = max(ans,skip,noskip)
 
