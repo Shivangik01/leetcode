@@ -1,20 +1,22 @@
 class Solution:
     def sortArrayByParity(self, nums: List[int]) -> List[int]:
         
-        cnt = 0
-        n = len(nums)
         i = 0
+        n = len(nums)
+        j = n-1
 
-        while cnt<n:
+        while i<j:
 
-            if nums[i]%2!=0:
-                nums.append(nums[i])
-                nums.pop(i)
-                
-                i-=1
-                
-            cnt+=1
-            i+=1
+            while i<n and nums[i]%2==0:
+                i+=1
 
-        print(nums)
+            while j>-1 and nums[j]%2!=0:
+                j-=1
+
+            #print(i,j,nums[i],nums[j])
+            if i<j:
+                nums[i],nums[j]=nums[j],nums[i]
+
+
+        #print(nums)
         return nums
