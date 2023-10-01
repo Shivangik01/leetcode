@@ -5,10 +5,10 @@ class Solution:
 
         #print(words)
         for w in words:
-            for i in range(len(w)-1,-1,-1):
-                ans += w[i]
+            # for i in range(len(w)-1,-1,-1):
+            #     ans += w[i]
 
-            ans+=' '
+            ans+=w[::-1]+' '
 
         return ans[:-1]
         
