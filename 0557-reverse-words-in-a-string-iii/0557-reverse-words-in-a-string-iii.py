@@ -1,14 +1,10 @@
 class Solution:
     def reverseWords(self, s: str) -> str:
-        words = s.split()
-        ans = ''
+        # words = s.split()
+        # ans = ''
 
-        #print(words)
-        for w in words:
-            # for i in range(len(w)-1,-1,-1):
-            #     ans += w[i]
+        # for w in words:
+        #     ans+=w[::-1]+' '
 
-            ans+=w[::-1]+' '
-
-        return ans[:-1]
+        return " ".join(w[::-1] for w in s.split())
         
