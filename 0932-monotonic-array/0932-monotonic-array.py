@@ -7,17 +7,8 @@ class Solution:
             return True
 
         else:
-
-            if nums[0]>nums[1]:
-                p = "gt"
-            
-            elif nums[0]<nums[1]:
-                p = "lt"
-            
-            else:
-                p = "eq"
-            
-            for i in range(2,n):
+            p="eq"
+            for i in range(1,n):
                 if p =="eq":
                     if nums[i-1]>nums[i]:
                         p = "gt"
