@@ -2,4 +2,6 @@ class Solution:
     def isPowerOfTwo(self, n: int) -> bool:
        #print(bin(n))
 
-       return True if n>0 and bin(n).count('1')==1 else False
+       #return False if n<=0 or bin(n).count('1')>1 else True
+
+       return n and not(n&n-1)
