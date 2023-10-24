@@ -10,24 +10,50 @@ from collections import defaultdict
 class Solution:
     def largestValues(self, root: Optional[TreeNode]) -> List[int]:
 
-        maximum = defaultdict(lambda : float('-inf'))
+        if not root:
+            return []
+
+        res = []
         
-        queue = [(root,0)]
+        queue = [root]
 
         while queue:
-            curr = queue.pop(0)
 
-            node = curr[0]
-            level = curr[1]
+            l = len(queue)
+            m = float('-inf')
+
+            for i in range(l):
+
+                node = queue.pop(0)
+                m = max(m,node.val)
+
+                if node.left!=None:
+                    queue.append(node.left)
+                if node.right!=None:
+                    queue.append(node.right)
+                
+            res.append(m)
+
+        return res
+
+        # maximum = defaultdict(lambda : float('-inf'))
+        
+        # queue = [(root,0)]
+
+        # while queue:
+        #     curr = queue.pop(0)
+
+        #     node = curr[0]
+        #     level = curr[1]
 
 
-            if node!=None:
-                maximum[level] = max(maximum[level],node.val)
-                queue.append((node.left,level+1))
-                queue.append((node.right,level+1))
+        #     if node!=None:
+        #         maximum[level] = max(maximum[level],node.val)
+        #         queue.append((node.left,level+1))
+        #         queue.append((node.right,level+1))
 
 
-        return maximum.values()
+        # return maximum.values()
 
     
         
