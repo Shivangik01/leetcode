@@ -5,11 +5,12 @@
 #         self.left = left
 #         self.right = right
 
-# bfs store levels and max of them 
+# bfs store levels and max of them
+from collections import defaultdict
 class Solution:
     def largestValues(self, root: Optional[TreeNode]) -> List[int]:
 
-        maximum = {}
+        maximum = defaultdict(lambda : float('-inf'))
         
         queue = [(root,0)]
 
@@ -21,7 +22,7 @@ class Solution:
 
 
             if node!=None:
-                maximum[level] = max(maximum.get(level,float('-inf')),node.val)
+                maximum[level] = max(maximum[level],node.val)
                 queue.append((node.left,level+1))
                 queue.append((node.right,level+1))
 
